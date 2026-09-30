@@ -29,8 +29,7 @@ if __name__ == "__main__":
     print(f"kade HP: {kade.health}\n")
     total_party_damage(cleric, kade)
     print(f"kade HP: {kade.health}\n")
-
-
+    
     # warrior.special_ability(mage)
     # mage.special_ability(warrior)
     # cleric.special_ability(warrior)
