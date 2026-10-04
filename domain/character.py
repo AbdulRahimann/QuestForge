@@ -1,4 +1,6 @@
-class Character:
+from abc import ABC, abstractmethod
+
+class Character(ABC):
     def __init__(self, name: str, health: int, attack_power: int):
         self.name = name
         self._health = health
@@ -27,3 +29,7 @@ class Character:
     def heal(self, amount: int) -> int:
         self._health = min(self._health + amount ,self.__max_health)
         return self._health
+
+    @abstractmethod
+    def special_ability(self, target: "Character") -> None:
+        raise NotImplementedError("every concrete must define its own move")

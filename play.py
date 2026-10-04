@@ -7,16 +7,17 @@ from domain.battle import run_special_round, total_party_damage
 
 if __name__ == "__main__":
     print("QuestForge booting...")
+    Character("test",100,10)
 
-    party = [Warrior("Bram"), Mage("Sylla"), Rogue("Kade"), Cleric("Thalia")]
-    dummy = Warrior("Dummy")
-    kade = Rogue("Kade")
+    # party = [Warrior("Bram"), Mage("Sylla"), Rogue("Kade"), Cleric("Thalia")]
+    # dummy = Warrior("Dummy")
+    # kade = Rogue("Kade")
 
 
-    for member in party:
-        # Same function call, but completely different behavior each time!
-        run_special_round(member, dummy)
-        print(f"Dummy HP: {dummy.health}\n")
+    # for member in party:
+    #     # Same function call, but completely different behavior each time!
+    #     run_special_round(member, dummy)
+    #     print(f"Dummy HP: {dummy.health}\n")
 
 
     # total_party_damage(party, dummy)
@@ -25,11 +26,14 @@ if __name__ == "__main__":
     # warrior = Warrior("Bram")
     # mage = Mage("Sylla")
     
-    cleric = Cleric("Thalia")
-    print(f"kade HP: {kade.health}\n")
-    total_party_damage(cleric, kade)
-    print(f"kade HP: {kade.health}\n")
-    
+    # cleric = Cleric("Thalia")
+    # for member in party:
+    #     total_party_damage(party, kade)
+
+    # print(f"kade HP: {kade.health}\n")
+    # total_party_damage(c, kade)
+    # print(f"kade HP: {kade.health}\n")
+
     # warrior.special_ability(mage)
     # mage.special_ability(warrior)
     # cleric.special_ability(warrior)
