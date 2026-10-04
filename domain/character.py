@@ -1,11 +1,14 @@
 from abc import ABC, abstractmethod
+from domain.inventory import Inventory
 
 class Character(ABC):
-    def __init__(self, name: str, health: int, attack_power: int):
+    def __init__(self, name: str, health: int, attack_power: int,defense: int = 0):
         self.name = name
         self._health = health
         self.__max_health = health
         self.attack_power = attack_power
+        self.inventory = Inventory()
+        self.defense = defense
 
     @property
     def health(self) -> int:
