@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 from domain.inventory import Inventory
+from domain.exceptions import DeadCharacterError
 
 class Character(ABC):
     def __init__(self, name: str, health: int, attack_power: int,defense: int = 0):
@@ -25,7 +26,7 @@ class Character(ABC):
 
     def attack(self, target: "Character") -> None:
         if not self.isalive:
-            return
+            raise DeadCharacterError(f"{self.name} is dead and cannot act")
         target.take_damage(self.attack_power)
         print(f"{self.name} attacks {target.name} for {self.attack_power} damage.")
 
