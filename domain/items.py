@@ -1,9 +1,10 @@
-from domain.item import Item
+from domain.item import  Usable, Equippable
 
 '''composition over inheritance''' 
 
 
-class HealthPotion(Item):
+class HealthPotion(Usable):
+
     def __init__(self, heal_amount: int = 25):
         self.heal_amount = heal_amount
 
@@ -14,12 +15,12 @@ class HealthPotion(Item):
 
 
 
-class Weapon(Item):
+class Weapon(Equippable):
     def __init__(self, name: str, bonus_attack: int):
         self.name = name
         self.bonus_attack = bonus_attack
 
 
-    def apply(self, character) -> str:
+    def equip(self, character) -> str:
         character.attack_power += self.bonus_attack
         return f"{character.name} equips {self.name} (+{self.bonus_attack} ATK)"

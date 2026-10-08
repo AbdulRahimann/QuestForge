@@ -28,8 +28,8 @@ class Character(ABC):
         if not self.isalive:
             raise DeadCharacterError(f"{self.name} is dead and cannot act")
         target.take_damage(self.attack_power)
-        print(f"{self.name} attacks {target.name} for {self.attack_power} damage.")
-
+        return f"{self.name} attacks {target.name} for {self.attack_power} damage."
+    
     def heal(self, amount: int) -> int:
         self._health = min(self._health + amount ,self.__max_health)
         return self._health

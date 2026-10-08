@@ -10,7 +10,7 @@ class Warrior(Character):
     def special_ability(self, target: Character) -> None:
         bonus = int(self.attack_power * 1.5)
         target.take_damage(bonus)
-        print(f"{self.name} uses Cleave! {bonus} damage to {target.name}")
+        return f"{self.name} uses Cleave! {bonus} damage to {target.name}"
 
 
 
@@ -28,7 +28,7 @@ class Mage(Character):
         self.mana -= cost
         damage = self.attack_power * 3
         target.take_damage(damage)
-        print(f"{self.name} casts Fireball! {damage} damage to {target.name}")
+        return f"{self.name} casts Fireball! {damage} damage to {target.name}"
 
 
 
@@ -40,7 +40,7 @@ class Rogue(Character):
     def special_ability(self, target: Character) -> None:
         crit = self.attack_power * 2
         target.take_damage(crit)
-        print(f"{self.name} lands a Backstab! {crit} critical damage to {target.name}")
+        return f"{self.name} lands a Backstab! {crit} critical damage to {target.name}"
 
 class Cleric(Character):
 
@@ -52,7 +52,5 @@ class Cleric(Character):
 
         target.heal(heal_amount)
 
-        print(
-            f"{self.name} uses Heal! "
-            f"{heal_amount} HP restored to {target.name}"
-        )
+        return f"{self.name} uses Heal! \n" f"{heal_amount} HP restored to {target.name}"
+        
