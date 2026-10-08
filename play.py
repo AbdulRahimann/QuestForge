@@ -8,7 +8,6 @@ from domain.exceptions import QuestForgeError
 
 if __name__ == "__main__":
     print("QuestForge booting...")
-
     
     warrior = Warrior("Bram")
     mage = Mage("Sylla")

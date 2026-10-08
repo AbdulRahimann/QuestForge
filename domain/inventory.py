@@ -1,4 +1,4 @@
-from domain import item
+
 from domain.exceptions import InventoryEmptyError
 from domain.item import Usable, Equippable
 class Inventory:
